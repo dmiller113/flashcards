@@ -1,0 +1,1 @@
+const e="always",r=()=>[{operator:"add"},{operator:"subtract"},{operator:"multiply"},{operator:"divide"},{operator:"mixed"}],t=Object.freeze(Object.defineProperty({__proto__:null,entries:r,trailingSlash:e},Symbol.toStringTag,{value:"Module"}));export{t as _,r as e};

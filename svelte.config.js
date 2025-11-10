@@ -10,9 +10,9 @@ const config = {
 	kit: {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		adapter: adapter({
-			assets: 'build',
+			assets: 'docs',
 			fallback: undefined,
-			pages: 'build',
+			pages: 'docs',
 			precompress: false,
 			strict: true,
 		}),
