@@ -13,6 +13,9 @@ const config = {
 			assets: 'build',
 			fallback: undefined,
 			pages: 'build',
+			paths: {
+				base: process.argv.includes('dev') ? '' : 'flashcards',
+			},
 			precompress: false,
 			strict: true,
 		}),
