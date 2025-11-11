@@ -1,15 +1,32 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	type Operation = {
 		href: string;
 		name: string;
 	};
 
 	const operations: ReadonlyArray<Operation> = [
-		{ name: "Addition", href: "/cards/add" },
-		{ name: "Subtraction", href: "/cards/subtract" },
-		{ name: "Multiplication", href: "/cards/multiply" },
-		{ name: "Division", href: "/cards/divide" },
-		{ name: "Mixed Operations", href: "/cards/mixed" },
+		{ 
+			name: 'Addition',
+			href: resolve('/cards/[operator=operation]', { operator: 'add' }),
+		},
+		{
+			name: 'Subtraction',
+			href: resolve('/cards/[operator=operation]', { operator: 'subtract' }),
+		},
+		{
+			name: 'Multiplication',
+			href: resolve('/cards/[operator=operation]', { operator: 'multiply' }),
+		},
+		{
+			name: 'Division',
+			href: resolve('/cards/[operator=operation]', { operator: 'divide' }),
+		},
+		{
+			name: 'Mixed Operations',
+			href: resolve('/cards/[operator=operation]', { operator: 'mixed' }),
+		},
 	];
 </script>
 

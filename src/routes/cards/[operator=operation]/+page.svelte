@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	import { getCardText } from '$lib/cards';
 	import type { CardData } from '$lib/types/cards';
 
@@ -12,7 +14,10 @@
 	</li>
 {/snippet}
 
-<a href={`/cards/${operator}/0`}>Start Course!</a>
+<a href={resolve(
+	'/cards/[operator=operation]/[index=number]',
+	{ index: "0", operator },
+)}>Start Course!</a>
 
 <h2>Cards in this Course</h2>
 <ul>
