@@ -31,8 +31,8 @@
 		e.stopPropagation();
 
 		const url = isLastCard
-			? resolve('/cards')
-			: resolve('/cards/[operator=operation]/[index=number]', {
+			? resolve('/')
+			: resolve('/[operator=operation]/[index=number]', {
 					index: nextIndex!.toString(),
 					operator,
 				});

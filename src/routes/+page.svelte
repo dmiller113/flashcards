@@ -9,23 +9,23 @@
 	const operations: ReadonlyArray<Operation> = [
 		{ 
 			name: 'Addition',
-			href: resolve('/cards/[operator=operation]', { operator: 'add' }),
+			href: resolve('/[operator=operation]', { operator: 'add' }),
 		},
 		{
 			name: 'Subtraction',
-			href: resolve('/cards/[operator=operation]', { operator: 'subtract' }),
+			href: resolve('/[operator=operation]', { operator: 'subtract' }),
 		},
 		{
 			name: 'Multiplication',
-			href: resolve('/cards/[operator=operation]', { operator: 'multiply' }),
+			href: resolve('/[operator=operation]', { operator: 'multiply' }),
 		},
 		{
 			name: 'Division',
-			href: resolve('/cards/[operator=operation]', { operator: 'divide' }),
+			href: resolve('/[operator=operation]', { operator: 'divide' }),
 		},
 		{
 			name: 'Mixed Operations',
-			href: resolve('/cards/[operator=operation]', { operator: 'mixed' }),
+			href: resolve('/[operator=operation]', { operator: 'mixed' }),
 		},
 	];
 </script>
