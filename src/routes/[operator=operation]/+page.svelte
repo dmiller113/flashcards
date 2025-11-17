@@ -15,7 +15,7 @@
 {/snippet}
 
 <a href={resolve(
-	'/cards/[operator=operation]/[index=number]',
+	'/[operator=operation]/[index=number]',
 	{ index: "0", operator },
 )}>Start Course!</a>
 
