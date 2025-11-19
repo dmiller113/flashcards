@@ -30,9 +30,33 @@
 	];
 </script>
 
-<p>Choose operation to review:</p>
-<ul>
+<style>
+	.operations {
+		display: grid;
+		gap: 0.5rem 1rem;
+		grid-template-columns: 1fr;
+		padding: 0.5rem 0;
+		width: 100%;
+
+		@media screen and (min-width: 30.1rem) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media screen and (min-width: 50.1rem) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		@media screen and (min-width: 60.1rem) {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+</style>
+
+<h3>Choose operation to review:</h3>
+<ul class="operations">
 	{#each operations as {href, name}}
-		<li><a {href}>{name}</a></li>
+		<li class="operation">
+			<a class="action button full-width-mobile" {href}>{name}</a>
+		</li>
 	{/each}
 </ul>
