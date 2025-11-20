@@ -56,7 +56,7 @@
 <ul class="operations">
 	{#each operations as {href, name}}
 		<li class="operation">
-			<a class="action button full-width-mobile" {href}>{name}</a>
+			<a class="action button full-width" {href}>{name}</a>
 		</li>
 	{/each}
 </ul>

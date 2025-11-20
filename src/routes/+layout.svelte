@@ -28,6 +28,8 @@
 		}
 
 		div.content {
+			display: grid;
+			row-gap: 1rem;
 			width: calc(100vw - 2rem);
 		}
 
@@ -85,6 +87,7 @@
 			padding: 0;
 		}
 
+		button,
 		.button {
 			align-items: center;
 			border: 1px solid var(--border-color);
@@ -99,14 +102,19 @@
 				background: var(--action-button-background);
 				color: var(--action-button-text);
 				transition: background 300ms ease-out;
+				width: fit-content;
 				
 				&:active, &:hover, &:focus,
 				&:has(:active), &:has(:hover), &:has(:focus) {
 					background: var(--action-button-hover-background);
 				}
-			}
-			@media screen and (max-width: 40rem) {
-				&.full-width-mobile {
+
+				&.small {
+					font-size: 1rem;
+					padding: 0.5rem 1rem;
+				}
+
+				&.full-width {
 					width: 100%;
 				}
 			}
