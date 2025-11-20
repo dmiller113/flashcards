@@ -48,12 +48,49 @@
 	);
 </script>
 
+<style>
+	input.answer {
+		font-size: 1.25rem;
+		line-height: 1;
+		padding: 0.25rem;
+	}
+
+	.card {
+		align-items: center;
+		gap: 1rem;
+		display: grid;
+		grid-template-areas:
+			"problem answer"
+			"action action";
+		grid-template-columns: auto minmax(0, 1fr);
+
+		.action {
+			grid-area: action;
+			width: 100%;
+
+			@media screen and (min-width: 50.1rem) {
+				width: fit-content;
+			}
+		}
+
+		.answer {
+			grid-area: answer;
+		}
+
+		.problem {
+			grid-area: problem;
+		}
+
+		@media screen and (min-width: 50.1rem) {
+			grid-template-areas: "problem answer action";
+			grid-template-columns: repeat(2, minmax(0, max-content)) auto;
+		}
+	}
+</style>
+
 {#snippet message(correct: boolean)}
 	<h4
 		style:color={correct ? 'green' : 'red'}
-		style:font-size="1.2rem"
-		style:font-weight="bold"
-		style:margin="0"
 	>
 		{correct ? 'Correct!' : 'Incorrect!'}
 	</h4>
@@ -74,42 +111,30 @@
 	{:else if isCorrect === false}
 		{@render incorrect()}
 	{/if}
-	<form
-		style:align-items="center"
-		style:column-gap="1rem"
-		style:display="flex"
+	<form class="card"
 		onsubmit={handleSubmit}
 	>
-		<h2
-			style:font-size="1.5rem"
-			style:line-height="1"
-		>
+		<h2 class="problem">
 			{getCardText(card)} =
 		</h2>
 		{#if questionType === 'free-input' && isCorrect === undefined}
 			<input
-				style:box-sizing="border-box"
-				style:font-size="1.25rem"
-				style:line-height="1"
-				style:padding="0.25rem"
+				class="answer"
 				name={answerName}
 				type="number"
 				min="0"
 				bind:value={cardAnswer}
 			/>
 		{:else if isCorrect !== undefined}
-			<h2
-				style:font-size="1.5rem"
-				style:line-height="1"
-			>
+			<h2 class="answer">
 				{cardAnswer}
 			</h2>
 		{/if}
 
 		{#if isCorrect === undefined }
-			<button onclick={handleAnswer}>Check</button>
+			<button class="action" onclick={handleAnswer}>Check</button>
 		{:else}
-			<button type="submit">{!isLastCard ? 'Next' : 'Finish'}</button>
+			<button class="action" type="submit">{!isLastCard ? 'Next' : 'Finish'}</button>
 		{/if}
 	</form>
 {/key}
